@@ -58,7 +58,8 @@ Hence hall effect sensors varies output voltage in response to a magnetic field,
 <h2>
 <a id="code-structure" class="anchor" href="#code-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Structure</h2>
 
-<p>We designed our code structure such that we first configure the device, after which we enter low power mode. 
+<p><img src="https://github.com/ethanwhassat/LONGBOARD-LIGHT-PAINTING-SPEEDOMETER/blob/master/Code%20Structure.png?raw=true" alt="Code Structure">
+We designed our code structure such that we first configure the device, after which we enter low power mode. 
 We exit low power mode by entering port interrupt, where we record the number of wheel turns. 
 Afterwards we enter watchdog timer interrupt, which keeps a counter to keep track of the time. 
 When a preset amount of time as passed and the counter in wdt hits a number, we reset the counter, calculate the average speed during this period of time and then enable timer interrupt,disabling other interrupts at the same time and adjust CCR0 according to the speed and display the pattern.</p>
@@ -66,7 +67,8 @@ When a preset amount of time as passed and the counter in wdt hits a number, we 
 <h2>
 <a id="system-setup" class="anchor" href="#system-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>System Setup</h2>
 
-<p>We designed our system as follow: we secure the PCB holding both the MSP430 and batteries to the back of the longboard, the hall sensor is placed on the truck of the board, a high-strength magnet is placed on the inner side of the wheel. 
+<p><img src="https://github.com/ethanwhassat/LONGBOARD-LIGHT-PAINTING-SPEEDOMETER/blob/master/system%20setup.png?raw=true" alt="System Setup">
+We designed our system as follow: we secure the PCB holding both the MSP430 and batteries to the back of the longboard, the hall sensor is placed on the truck of the board, a high-strength magnet is placed on the inner side of the wheel. 
 As the wheel turns, the hall effect sensor would be able to vary its output due to the varying magnetic field caused by the changing distance between the magnet and the sensor. 
 The LED strip is placed on top of the board for light painting.</p>
 
@@ -85,13 +87,21 @@ At each trigger of interrupt we record a wheel turn. Since we can enter low powe
 <p>As for light painting using the LED strip, the LED displays speed as pixelated numbers of 12x8 arrays, which means that each number is displayed as 8 columns, requiring LED strip to be programmed 8 times to display each number.</p>
 
 <h2>
-<a id="demo--presentation-video" class="anchor" href="#demo--presentation-video" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo &amp; Presentation Video</h2>
+<a id="some-cool-results" class="anchor" href="#some-cool-results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Some Cool Results</h2>
 
-<p><img src="https://github.com/ethanwhassat/LONGBOARD-LIGHT-PAINTING-SPEEDOMETER/blob/master/demo%20rice%20elec%203217.JPG" alt="Pattern with RICE ELEC 327">
-<img src="https://github.com/ethanwhassat/LONGBOARD-LIGHT-PAINTING-SPEEDOMETER/blob/master/demo%20sequence.JPG" alt="Pattern with numerical sequence">
-<img src="https://github.com/ethanwhassat/LONGBOARD-LIGHT-PAINTING-SPEEDOMETER/blob/master/demo%20speed.JPG" alt="Displaying speed">
-<a href="https://www.youtube.com/watch?v=_eww3fHMB54">Longboard Light Painting Speedometer Demo</a>
-<a href="https://www.youtube.com/watch?v=v2mgXxUTHiQ">Ball Demo</a></p>
+<p><img src="https://github.com/ethanwhassat/LONGBOARD-LIGHT-PAINTING-SPEEDOMETER/blob/master/demo%20rice%20elec%203217.JPG?raw=true" alt="Pattern with RICE ELEC 327">
+<img src="https://github.com/ethanwhassat/LONGBOARD-LIGHT-PAINTING-SPEEDOMETER/blob/master/demo%20sequence.JPG?raw=true" alt="Pattern with numerical sequence">
+<img src="https://github.com/ethanwhassat/LONGBOARD-LIGHT-PAINTING-SPEEDOMETER/blob/master/demo%20speed.JPG?raw=true" alt="Displaying speed"></p>
+
+<h3>
+<a id="longboard-light-painting-speedometer-demo" class="anchor" href="#longboard-light-painting-speedometer-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Longboard Light Painting Speedometer Demo</h3>
+
+<p><a href="https://www.youtube.com/watch?v=_eww3fHMB54">Longboard Light Painting Speedometer Demo</a></p>
+
+<h3>
+<a id="ball-20-demo" class="anchor" href="#ball-20-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ball 2.0 Demo</h3>
+
+<p><a href="https://www.youtube.com/watch?v=v2mgXxUTHiQ">Ball Demo</a></p>
 </blockquote>
       </section>
     </div>
